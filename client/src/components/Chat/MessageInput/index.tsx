@@ -4,11 +4,11 @@ type Props = {
   sendHandler: (message: string) => void;
 };
 
-const MessageInput: React.FC<Props> = (props) => {
-  const [msg, setMsg] = useState("");
+function MessageInput({ sendHandler }: Props) {
+  const [msg, setMsg] = useState<string>("");
 
   const handleSend = () => {
-    props.sendHandler(msg);
+    sendHandler(msg);
     setMsg("");
   };
 
@@ -30,6 +30,6 @@ const MessageInput: React.FC<Props> = (props) => {
       </button>
     </div>
   );
-};
+}
 
 export default MessageInput;

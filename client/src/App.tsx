@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
+import io from "socket.io-client";
 import "./App.css";
 
-const App: React.FC<any> = (props) => {
+const socket = io("http://localhost:5000");
+
+const App: React.FC = () => {
+  useEffect(() => {
+    socket.on('message', (message: string) => {
+
+    })
+  }, [])
   return (
     <div className="App">
       <h1>Devly - Chat for developers</h1>
